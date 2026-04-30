@@ -1,3 +1,4 @@
+// Q1.
 // Temp conversion
 // celcious to fahrenheit
 
@@ -11,4 +12,114 @@ int main(){
     cout << fahrenheit << endl;
     return 0;
 }
+
+
+// Q2.
+#include <iostream>
+using namespace std;
+// Global variable
+int globalVariable = 100;
+int main(){
+    // local variable
+    int userInput;
+    float result;
+    cin >> userInput;
+    result= (double)globalVariable / userInput;
+    cout << result << endl;
+    return 0;
+}
+
+
+// Q3. 
+// Triangle using logical and relational operator
+
+#include <iostream>
+using namespace std;
+int main(){
+    int side1, side2, side3;
+    cin >> side1 >> side2 >> side3;
+    bool isEqui = (side1 > 0) && (side1 == side2) && (side2 == side3);
+    cout << isEqui << endl;
+    return 0;
+}
+
+
+// Q4.Swap 2 variable using 3rd variable
+
+#include <iostream>
+using namespace std;
+int main(){
+    int a, b;
+    cin >> a >> b;
+    // swapping logic;
+    int temp=a;
+    a=b;
+    b=temp;
+    cout << a << "\n" << b << endl;
+    return 0;
+}
+
+// Q5.area of shapes 
+// 1--circle, 2-- rectangle, 3-- square
+#include <iostream>
+using namespace std;
+int main(){
+    int choice;
+    cin >> choice;
+    if(choice == 1){
+        double radius;
+        cin >> radius;
+        cout << 3.14 * radius * radius;
+    }
+    else if(choice == 2){
+        double length, width;
+        cin >> length >> width;
+        cout << length *width << endl;
+    }
+    else if(choice == 3){
+        double base, height;
+        cin >> base >> height;
+        cout << 0.5 * base *height << endl;
+    }
+    else {
+        cout << "Invalid Choice" << endl;
+    }
+    return 0;
+}
+
+
+// Q6. average and sum
+
+#include <iostream>
+using namespace std;
+int main(){
+    float sum, avg, a, b, c;
+    cin >> a >> b >> c;
+    sum= a+b+c;
+    avg= sum / 3.0;
+    cout << sum << "\n" << avg << endl;
+    return 0;
+}
+
+// Q7. login credential prog
+
+#include <iostream>
+using namespace std;
+int main(){
+    const int userId = 1234;
+    const int password = 0000;
+    int inputID, inputPassword;
+    cout << "enter your id here";
+    cin >> inputID;
+    cout <<"enter your password here";
+    cin >> inputPassword;
+    bool isGranted = (userId == inputID) && (password == inputPassword);
+    cout << "Access Granted " << isGranted << endl;
+    cout << "Access denied " << !isGranted << endl;
+    return 0;
+}
+
+
+
+
 
