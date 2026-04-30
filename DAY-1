@@ -1,0 +1,14 @@
+// Temp conversion
+// celcious to fahrenheit
+
+#include <iostream>
+using namespace std;
+int main(){
+    double celcius,fahrenheit;     // define 
+    cin >>  celcius;
+    (celcius * 9.0 / 5.0) +32.0;
+    fahrenheit = (celcius * 9.0 / 5.0) +32.0;
+    cout << fahrenheit << endl;
+    return 0;
+}
+
