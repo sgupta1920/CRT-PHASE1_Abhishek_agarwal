@@ -1,0 +1,181 @@
+// Q1. IF CONDITION
+to verify user age weather eligible for vote or not
+
+#include <iostream>
+using namespace std;
+int main(){
+    int age;
+    cin >> age;
+    if(age >= 18){
+        cout << "Eligible for vote";
+    }
+    return 0;
+}
+
+
+// Q2. IF-ELSE CONDITION
+// to verify user age weather eligible for vote or not
+
+#include <iostream>
+using namespace std;
+int main(){
+    int age;
+    cin >> age;
+    if(age >= 18){
+        cout << "Eligible for vote";
+    }
+    else{
+        cout << " Not eligible for vote";
+    }
+    return 0;
+}
+
+
+// Q3. nested if else 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin >> age;
+
+    if (age >= 18) {
+        if (age >= 100) {
+            cout << "eligible for vote (but you are a super senior citizen)";
+        } else {
+            cout << "eligible for vote";
+        }
+    } else {
+        if (age < 0) {
+            cout << "enter a valid age number";
+        } else {
+            cout << "not eligible for vote";
+        }
+    }
+
+    return 0;
+}
+
+// Q4. Ternary operator 
+// find the greater number among 2
+
+#include <iostream>
+using namespace std;
+int main(){
+    int a, b;
+    int max_number;
+    cin >> a >> b;
+    // Ternary operator
+    max_number = (a > b) ? a : b; // ? is a if-else cond, if a>b then print a else print b
+    cout << max_number;
+    return 0;
+}
+
+// Q5 continue Statement 
+// print 1 to n and avoid number which are divisible by 3
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    for(int i=1; i <= n; i++){
+        if(i % 3 == 0){
+            continue;
+        }
+            cout << i << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+
+
+// Q6. break Statement
+// we have to add numbers until we get a negative number
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    int sum=0;
+    while(true){
+        cin >> n;
+        if(n < 0){
+            break;
+        }
+        sum += n;
+    }
+    cout << sum;
+    return 0;
+}
+
+
+// Q7. smart home lightning system
+
+#include <iostream>
+using namespace std;
+int main(){
+    string DayOrNight;
+    bool motionDetected;    // in 0/1
+    cout << "is it day or night  ";
+    cin >> DayOrNight;
+    cout << "is motion detected? (1 for yes, 0 for no): ";
+    cin >> motionDetected;
+    if(DayOrNight == "Night" || DayOrNight == "night"){
+        if(motionDetected){
+            cout << "turn on the LED light with 100% brightness..";
+        }
+        else {
+            cout << " turn on the LED light with only 10% of brightness..";
+        }
+    }
+    else {
+        cout << "turn of the lights";
+    }
+    return 0;
+}
+
+
+
+// Q8. switch Statement
+// customer support ivr system
+// 1-- for support
+// 2-- for billing
+// 3-- for technical issue
+// 4--talk to the agent
+
+#include <iostream>
+using namespace std;
+int main(){
+    int choice;
+    cin >> choice;
+    switch(choice){
+        case 1:
+        cout << "transferring call to the customer support";
+        break;
+        case 2: 
+        cout << "transferring call to billing and accounts team";
+        break;
+        case 3: 
+        cout << "Connecting to technical help desk";
+        break;
+        case 4:
+        cout << "connecting call to the agent";
+        break;
+        default:
+        cout << "invalid selection, enter a valid number";
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
