@@ -95,6 +95,99 @@ int main(){
 }
 
 
+// Q8. print fibonacci series
+// output- 0 1 1 2 3 5.....
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int a=0;
+    int b=1;
+    int c;
+    for(int i=0; i < n; i++){     // i=index 
+        cout << a << " ";
+        c= a+b;
+        a=b;
+        b=c;
+    }
+    return 0;
+}
+
+
+// Q9. prime number checker
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    bool isPrime= true;
+    if(n < 2){    // using 2 becoz its the smalest prime no. 
+        isPrime= false;
+    }
+    else {
+        for(int i=2; i < n; i++){
+            if(n % i == 0){
+                isPrime= false;
+                break;   // exit loop once another factor apart from 1 is found will leave the loop
+            }
+        }
+    }
+    if(isPrime){
+        cout << "Prime number";
+    }
+    else {
+        cout << "not a prime number";
+    }
+    return 0;
+}
+
+
+// Q 10. smart phone unlock
+// try to unlock the phone until we get the correct password
+
+#include <iostream>
+using namespace std;
+int main(){
+    int password;
+    do{
+        cout << " enter the password: ";
+        cin >> password;
+    }
+    while (password != 1234);
+    cout << "Phone unlocked";
+    return 0;
+}
+
+
+// Q 11. water jar filler
+
+#include <iostream>
+using namespace std;
+int main() {
+	int currentWater = 0;
+	int add;
+	while(currentWater < 500) {
+		cout << "Glass has" << currentWater << "ml. and how much? ";
+		cin >> add;
+		currentWater += add;
+	}
+	cout << "Glass is full with water: " << currentWater << "ml";
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
