@@ -1,0 +1,169 @@
+// PATTERN PRINTING
+
+// Q1. print 1 to 10, 10 numbers of times
+
+#include<iostream>
+using namespace std;
+int main(){
+    for(int i=1; i <= 10; i++){  // outer for loop defines the number of rows. 
+        // defines what to print in the pattern
+        for(int j=1; j <= 10; j++){
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+
+// Q2. print square pattern in *
+
+#include<iostream>
+using namespace std;
+int main(){
+    for(int i=1; i <= 10; i++){  // outer for loop defines the number of rows. 
+        // defines what to print in the pattern
+        for(int j=1; j <= 10; j++){
+            cout << "* ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+
+// Q3. right angled triangle
+// *
+// **
+// ***
+// ****
+// *****
+// ******
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    // defines me the number of times
+    for(int i=1; i <= n; i++){  
+        for(int j=1; j <= i; j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+// Q4. 
+//     *
+//    **
+//   ***
+//  ****
+// *****
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    // number of times or number of rows
+    for(int i=1; i <= n; i++){
+        // number of spaces logic is here
+        for(int j = 1; j <= n-i; j++){
+            cout << " ";
+        }
+        for(int k=1; k <= i ; k++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
+
+// Q5. print rectangle pattern in *
+
+#include<iostream>
+using namespace std;
+int main(){
+    int row;
+    int cols;
+    cin >> row;
+    cin >> cols;
+    for(int i=1; i <= row; i++){ 
+        for(int j=1; j <= cols; j++){
+            cout << "* ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+
+// Q6. hollow square
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    for(int i=1; i <= n; i++){ 
+        for(int j=1; j <= n; j++){
+            cout << " ";
+            if((i == 1) || (j == 1) || (i == n) || (j == n)){
+                cout << "*";
+            }
+            else {
+                cout << " ";
+            }
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+
+// Q7. pyramid
+//    *
+//   ***
+//  *****
+// *******
+
+// difference b/w this pyramid and mirror right angle triangl is space before printing " *""
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    // number of times or number of rows
+    for(int i=1; i <= n; i++){
+        // number of spaces logic is here
+        for(int j = 1; j <= n-i; j++){
+            cout << " ";
+        }
+        for(int k=1; k <= i ; k++){
+            cout << " *";
+        }
+        cout << "\n";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
