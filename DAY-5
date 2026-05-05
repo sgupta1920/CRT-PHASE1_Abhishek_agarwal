@@ -1,0 +1,186 @@
+// Q1. pattern printing
+// *
+// **
+// ***
+// ****
+// *****
+// ****
+// ***
+// **
+// *
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    // upper right angled triangle
+    for(int i=1; i <= n; i++){  
+        for(int j=1; j <= i; j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    // lower half triangle
+    for (int k= n-1; k >= 1; k--){
+            for(int l= 1; l <= k; l++){
+                cout << "*";
+            }
+            cout << "\n";
+        }
+}
+
+
+// Q2. function declaration and initialization
+
+#include<iostream>
+using namespace std;
+void printMessage(){
+    cout << "Hi we are learning functions";
+}
+int main(){
+    printMessage(); // calling a function
+    return 0;
+}
+
+
+// Q3. making a function with argument and return typedef
+
+// #include<iostream>
+using namespace std;
+int area(int a, int b){  // developer part
+    return a*b;
+}
+int main(){
+    int length= 10;
+    int width = 5;
+    int areaOfRectangle = area(length, width);
+    cout << areaOfRectangle;
+}
+
+
+// user defined function types 
+
+// Q4.
+// 4.1.) No argument and no retrun types
+
+#include <iostream>
+using namespace std;
+void DoorBell(){
+    cout << "Ting tong";
+}
+int main(){
+    DoorBell();
+    return 0;
+}
+
+// 4.2 Argument, no return types
+
+#include <iostream>
+using namespace std;
+void SendText(string message){
+    cout << message;
+}
+int main(){
+    SendText("BJP wons");
+    return 0;
+}
+
+// 4.3 No Argument, return types
+
+#include <iostream>
+using namespace std;
+int ticketNumber(){
+    return 101;
+}
+int main(){
+    cout << ticketNumber();
+    return 0;
+}
+
+// 4.4 Argument, return types
+
+#include <iostream>
+using namespace std;
+int currencyConversion(int amountInINR){
+    return amountInUSD / 100;
+}
+int main(){
+    cout << currencyConversion(1000);
+    return 0;
+}
+
+
+// Q5. function overloading
+// same function name, different Argument(parameter)
+
+#include<iostream>
+using namespace std;
+int add(int a, int b){
+    return a+b;
+}
+int add(int a, int b, int c){
+    return a+b+c;
+}
+int add(int a, int b, int c, int d){
+    return a+b+c+d;
+}
+double add(double a, double b){
+    return a+b;
+}
+int main(){
+    cout << add(5,2) << "\n";
+    cout << add(5,2,3) << "\n";
+    cout << add(5,2,3,4) << "\n";
+    cout << add(5.5, 2.0);
+    return 0;
+}
+
+
+// Q6. Pointers
+
+#include <iostream>
+using namespace std;
+int main(){
+    int age=24;
+    int *ptr = &age;
+    cout << age << "\n";
+    cout << ptr << "\n";  // address of the variable 
+    cout << *ptr << "\n";  // value of the pointer 
+    // dereferencing of pointer
+    *ptr = 28; // changing of variable value using pointer
+    cout << *ptr << "\n";
+}
+
+
+// Q7. addition of 2 numbers using Pointers
+
+#include <iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cin >> a;
+    cin >> b;
+    int *ptr1 = &a;
+    int *ptr2 = &b;
+    int sum = *ptr1 + *ptr2;
+    cout << "sum" <<" " << sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
