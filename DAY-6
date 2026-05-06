@@ -1,0 +1,164 @@
+// Q1. Swapping of values of 2 variables using swap function
+
+#include <iostream>
+using namespace std;
+// using function type 
+// argument, no return 
+void swapNumber(int *x, int *y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+int main(){
+    int a, b;
+    cin >> a;
+    cin >> b;
+    swapNumber(&a, &b);
+    cout << a << " " << b;
+}
+
+
+// Q2. default argument
+
+#include <iostream>
+using namespace std;
+// argument with return type
+int area(int a, int b = 5){
+    return a*b;
+}
+int main(){
+    cout << area(10)<< "\n";
+    cout << area(10,3);  // will take user value...
+}
+
+// Q3. 
+// call by value - photocopy - will never update the original data
+// call by reference - original
+
+#include <iostream>
+using namespace std;
+// argument, no return type
+void updatebyValue(int a){
+    a = 500;
+}
+void updatebyReference(int &a){
+    a = 500;
+}
+int main(){
+    int original = 100; 
+    cout << original << "\n";
+    updatebyValue(original);
+    cout << original << "\n";
+    updatebyReference(original);
+    cout << original;
+}
+
+
+// practice problem
+// Q4. 
+
+// my code
+#include <iostream>
+using namespace std;
+// argument, return type
+int coffee(int perCoffee, int CoffeeSold){
+    return perCoffee*CoffeeSold;
+}
+int main(){
+    cout << coffee(100, 5);
+}
+
+// sir's code
+#include <iostream>
+using namespace std;
+// argument, return type
+int billing(int a){
+    return a*30;
+}
+int main(){
+    int coffee = 3;
+    cout << billing(coffee);
+}
+
+// Q5. Smart AC remote 
+// using function overloading and default argument
+
+#include <iostream>
+using namespace std;
+void setTemprature(int temp = 22){
+    cout << "temprature set to " << temp << "°C" << "\n";
+}
+void setTemprature(double temp){
+    cout << "temprature set to " << temp << "°C" << "\n";
+}
+void setTemprature(string mode){
+    if(mode == "ECO"){
+        cout << "temprature set to 24°C" << "°C" << "\n";
+    }
+    else if(mode == "TURBO"){
+        cout << "temprature set to 18°C" << "°C";
+    }
+}
+int main(){
+    setTemprature();   // default value -- 22
+    setTemprature(20.5);  // manually setting the temprature
+    setTemprature("ECO");  //Set temprature to 24
+    setTemprature("TURBO");  // set temprature to 18
+}
+
+
+// Q6. class and objects
+
+#include <iostream>
+using namespace std;
+class Student{
+    public:
+    string name;
+    int age;
+void introduce(){
+        cout << "hi there, this person name is " << name << " and her age is " << age << "\n";
+    }
+};
+int main(){
+    Student s1;
+    Student s2;
+    s1.name = "Sneha";
+    s1.age = 21;
+    s2.name= "kadambari";
+    s2.age = 20;
+    s1.introduce();
+    s2.introduce();
+}
+
+
+// Q7. access modifiers
+// 7.1) public 
+
+#include <iostream>
+using namespace std;
+class PublicPark{
+    public:
+    void enter(){
+        cout << "Anyone can enter in the park";
+    }
+};
+int main(){
+    PublicPark p;
+    p.enter();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
