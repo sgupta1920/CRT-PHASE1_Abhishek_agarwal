@@ -1,0 +1,151 @@
+// Q1. Access specifier
+// 7.2) private
+
+#include <iostream>
+using namespace std;
+class BankAccount{
+    private: // can be accessed only inside class BankAccount
+    int Balance = 5000;
+    public:  // can be accessed anywhere in prog
+    void ShowBalance(){
+        cout << "Balance in your account is: " << Balance;
+    }
+};
+int main(){
+    BankAccount myaccount;  // object
+    myaccount.ShowBalance();
+}
+
+
+// Q2. Access specifier
+// 7.3) protected
+
+#include <iostream>
+using namespace std;
+class Parent{
+    protected:
+    int secretCode = 1234;
+};
+class child : public Parent{   // inheritance
+    public:
+    void AccessOfSecretCode(){
+        cout << "secretCode of the locker is " << secretCode;
+    }
+};
+int main(){
+    child obj1;
+    obj1.AccessOfSecretCode();
+}
+
+// Q3. Constructor
+// Types
+// 3.1 default
+// 3.2 parameterized
+// 3.3 copy
+
+
+// 3.1) default
+
+#include <iostream>
+using namespace std;
+class WifiConnection{
+    public:
+    string networkName;
+    string password;
+    
+    // Constructor
+    WifiConnection(){
+        networkName = "ACTFibre";
+        password = "1234";
+    }
+public:
+void showDetails(){
+    cout << "network Name is " << networkName << " and its password is " << password;
+}
+};
+int main(){
+    WifiConnection obj1;
+    obj1.showDetails();
+}
+
+#include <iostream>
+using namespace std;
+class Student {
+    public:
+    string name;
+    int id;
+
+// Constructor
+Student (string StudenName, int StudenId){
+    name = StudenName;
+    id = StudenId;
+}
+public:
+void displayDetails(){
+    cout << name << " " << id;
+}
+};
+int main(){
+    Student std1("Sneha", 101);
+    std1.displayDetails();
+}
+
+// OOPS-- PIPLLAR OF OOPS
+// Encapsulation-- means we r binding the data into a single unit(function, data, variable, method)
+// into a single unit called class and making some restriction on this class member
+
+// 20% are managed by encapsulation and 80% is managed by access specifier
+// Need :
+// 1) data security
+// 2) controller access over my data
+// 3) validation before accessing
+// 4) code maintanability
+
+// Q5.
+#include <iostream>
+using namespace std;
+class BankAccount{
+    private:
+    int balance;
+    public:
+    void setBalance(int amount){
+        if(amount >= 0 ){
+            balance = amount;
+        }
+        else {
+            cout << "Enter a valid numbe";
+        }
+    }
+    public:
+    int getBalance(){  // getter function
+        return balance;
+    }
+
+};
+int main(){
+    BankAccount obj1;
+    obj1.setBalance(5000);
+    cout << obj1.getBalance();
+}
+
+// 2) Abstraction-- PIPLLAR OF OOPS
+// Abstraction means hiding the implementation and showing only the necessary/ essential 
+// features to the users
+// ABSTRACT CLASS -- class cannot be initialized and it is formed using the abstract keyword
+// ABSTRACT METHOD-- there is no initialization of the abstract method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
