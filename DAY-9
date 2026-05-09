@@ -1,0 +1,165 @@
+// Q1. function overriding
+
+#include <iostream>
+using namespace std;
+class Appliance{
+    public:
+    virtual void turnOn(){
+        cout << "Appliance is starting" << "\n";
+    }
+    virtual void work() = 0;   // pure virtual function means not giving any return and has value 0
+};
+class Fan : public Appliance{
+    public:
+    void turnOn() override{
+        cout << "Fan blades are moving slowly" << "\n";
+    }
+    void work() override{
+        cout << "Fan is giving me cool air " << "\n";
+    }
+};
+class Toaster : public Appliance{
+    public:
+    void work() {
+        cout << "Toaster is heating up the breads" << "\n";
+    }
+};
+int main(){
+    Appliance *kitchenApp;
+    Fan myfan;
+    kitchenApp = &myfan;
+    kitchenApp->turnOn();
+    kitchenApp->work();
+    
+    Toaster myToast;
+    kitchenApp = &myToast;
+    kitchenApp->turnOn();
+    kitchenApp->work();
+}
+
+
+// Q2. Constructor overloading
+// Constructor only works with object 
+
+#include <iostream>
+using namespace std;
+class Rectangle{
+    public:
+    int length;
+    int width;
+    Rectangle(){     // Constructor same class name ka banta hia
+        length =1;
+        width = 1;
+    }
+    Rectangle(int side){
+        length= side;
+        width= side;
+    }
+    Rectangle(int side1, int side2){
+        length=side1;
+        width=side2;
+    }
+    void showArea(){
+        cout << length * width << "\n";
+    }
+};
+int main(){
+    Rectangle r1;
+    Rectangle r2(5);
+    Rectangle r3(5,4);
+    r1.showArea();
+    r2.showArea();
+    r3.showArea();
+}
+
+
+// DSA
+
+// DSA
+
+// Q3. Introduction to Arrays + Traversal + Memeory Layout
+
+
+#include <iostream>
+using namespace std;
+void Traversal(int arr[] , int size){
+    for(int i=0; i < size; i++){
+        cout << arr[i] << " ";   
+    }
+}
+int main(){
+    int arr[] = {10,20,30,40,50};
+    Traversal(arr,5); 
+}
+
+
+// Q4. print memory address of each data in array
+
+#include <iostream>
+using namespace std;
+void Traversal(int arr[] , int size){
+    for(int i=0; i < size; i++){
+        cout << &arr[i] << " ";   
+    }
+}
+int main(){
+    int arr[] = {10,20,30,40,50};
+    Traversal(arr,5); 
+}
+
+
+// Q5. Linear Search
+
+#include <iostream>
+using namespace std;
+int LinearSearch(int arr[] , int size, int targetValue){
+    for(int i=0; i < size; i++){
+        if(arr[i] == targetValue){
+            return i;
+        }
+    }
+    return -1;  // not present in array
+}
+int main(){
+    int arr[] = {10,20,30,40,50};
+    cout << LinearSearch(arr, 5, 40);
+}
+
+
+// Q6. insert an element in an array
+
+#include <iostream>
+using namespace std;
+void printArray(int arr[] , int size){
+    for(int i =0 ; i< size; i++){
+        cout << arr[i]<< " ";
+    }
+    cout << "\n";
+}                             // static rahega &size agr vector use krenge toh & use nhi krna padega becoz dynamic nature hota hai
+void InsertElement(int arr[] , int &size, int index, int value){
+    for(int i=size; i > index; i--){
+        arr[i] = arr[i-1];
+    }
+    arr[index] = value;
+    size++;
+}
+int main(){
+    int arr[] = {10,20,30,40,50};
+    int size=5;  
+    InsertElement(arr, size, 2, 25);
+    printArray(arr, size);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
