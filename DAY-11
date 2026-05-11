@@ -1,0 +1,116 @@
+// Q1.
+
+// 189. Rotate Array
+// Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k %= n;
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.begin() + k);
+        reverse(nums.begin() + k, nums.end());
+    }
+};
+
+
+
+STRINGS
+
+// Q2.
+// 344. Reverse String
+
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        if(s.size() != goal.size()){
+            return false;
+        }
+        string doubleString = s+s;
+        return doubleString.contains(goal);
+    }
+};
+
+
+// Q3. rotate string
+
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        if(s.size() != goal.size()){
+            return false;
+        }
+        string doubleString = s+s;
+        return doubleString.contains(goal);
+    }
+};
+
+
+PALINDROME OF STRINGS PROBLEM
+
+// Q4
+//  pallindrome
+
+#include<iostream>
+using namespace std;
+bool isPalindrome(string str){
+    int start = 0;
+    int end = str.size() -1;
+    while(start < end){
+        if(str[start] == str[end]){
+            return true;
+        }
+        start++;
+        end--;
+    }
+    return false;
+}
+int main(){
+    string str;
+    cout << "enter a string= ";
+    cin >> str;
+    if(isPalindrome(str)){
+        cout << "pallindrome string";
+    }
+    else{
+        cout << "given string is not a pallindrome";
+    }
+    return 0;
+}
+
+// Q5. Valid Anagram
+
+// optimal solution using hash map
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size() != t.size()){
+            return false;
+        }
+        sort (s.begin(),s.end());
+        sort (t.begin(), t.end());
+        if(s==t){
+        return s==t;
+        }
+        return false;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
