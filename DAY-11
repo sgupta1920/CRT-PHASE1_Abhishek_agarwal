@@ -33,7 +33,8 @@ public:
 };
 
 
-// Q3. rotate string
+// Q3. 
+// 796. rotate string
 
 class Solution {
 public:
@@ -79,7 +80,8 @@ int main(){
     return 0;
 }
 
-// Q5. Valid Anagram
+// Q5. 
+// 242. Valid Anagram
 
 // optimal solution using hash map
 
