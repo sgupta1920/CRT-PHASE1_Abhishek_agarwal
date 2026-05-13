@@ -24,6 +24,28 @@ int main(){
 }
 
 
+// Q2. find total combination where i is fix and j is varying
+
+#include <iostream>
+using namespace std;
+int combination(int n){
+    // base condition
+    if(n<4){
+        return 1;
+    }
+    if(n == 4){
+        return 2;
+    }
+    // logic
+    return combination(n-1) + combination(n-4);
+}
+int main(){
+    cout << combination(10);
+    return 0;
+}
+
+
+// Q3. 
 
 
 
