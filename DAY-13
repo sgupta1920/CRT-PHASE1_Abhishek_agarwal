@@ -1,0 +1,41 @@
+// Q1. count the number of binary string without consecutive one
+// logic from logic series
+// runs n to 1 so its a tail recursion
+
+#include <iostream>
+using namespace std;
+void consecutiveOnes(int n){
+    // base condition
+    if(n==0){
+        return 1;
+    }
+    if(n==1){
+        return 2;
+    }
+    if(n==2){
+        return 3;
+    }
+    // logic
+    return consecutiveOnes(n-1) + consecutiveOnes(n-2);
+}
+int main(){
+    cout << consecutiveOnes(10);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
